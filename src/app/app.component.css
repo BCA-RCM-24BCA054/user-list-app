@@ -101,5 +101,37 @@
   .user-grid{
     grid-template-columns:1fr;
   }
+  .detail{
+  margin:12px 0;
+  text-align:left;
+  padding:8px;
+  background:#f8f9ff;
+  border-radius:8px;
+}
+
+.detail strong{
+  display:block;
+  color:#667eea;
+  margin-bottom:4px;
+}
+
+.detail span{
+  color:#444;
+  font-size:14px;
+  word-break:break-word;
+}
+
+.user-card{
+  background:white;
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  transition:.3s;
+  min-height:500px;
+}
+
+.user-card:hover{
+  transform:translateY(-8px);
+}
 
 }

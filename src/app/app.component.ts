@@ -1,28 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserService } from './services/user.service';
+import { UserService, User } from './services/user.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  private userService = inject(UserService);
+  users$: Observable<User[]> = this.userService.getUsers();
 
-  users: any[] = [];
-
-  constructor(private userService: UserService) {}
-
-  ngOnInit(): void {
-    this.userService.getUsers().subscribe({
-      next: (data) => {
-        this.users = data;
-      },
-      error: (error) => {
-        console.error('Error loading users:', error);
-      }
-    });
-  }
+  ngOnInit() { }
 }

@@ -1,13 +1,19 @@
-<div class="container">
+
+  <div class="container">
 
   <div class="header">
     <h1>User Directory</h1>
     <p>Services & API Integration Assignment</p>
   </div>
+  <div class="search-box">
+    <input
+      type="text"
+      placeholder="Search User...">
+  </div>
 
   <div class="user-grid">
 
-    <div class="user-card" *ngFor="let user of users">
+    <div class="user-card" *ngFor="let user of users$ | async">
 
       <div class="avatar">
         {{ user.name.charAt(0) }}
@@ -27,6 +33,7 @@
 
     </div>
 
-  </div>
+</div>
+  
 
 </div>
