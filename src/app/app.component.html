@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="header">
+    <h1>User Directory</h1>
+    <p>Services & API Integration Assignment</p>
+  </div>
+
+  <div class="user-grid">
+
+    <div class="user-card" *ngFor="let user of users">
+
+      <div class="avatar">
+        {{ user.name.charAt(0) }}
+      </div>
+
+      <h2>{{ user.name }}</h2>
+
+      <div class="detail">
+        <span class="label">Email</span>
+        <p>{{ user.email }}</p>
+      </div>
+
+      <div class="detail">
+        <span class="label">Website</span>
+        <p>{{ user.website }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
